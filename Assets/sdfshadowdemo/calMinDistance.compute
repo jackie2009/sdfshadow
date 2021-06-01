@@ -1,0 +1,30 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+ 
+ 
+Texture2DArray<float4> depthTex;
+ 
+RWStructuredBuffer<float> rstBuff;
+[numthreads(1,1,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+	float minDis = 10000;
+	bool inside = false;
+	for (int i = 0; i < 32; i++)
+	{
+		for (int j = 0; j < 32; j++)
+		{
+			for (int k = 0; k < 6; k++)
+			{
+                float result = depthTex[uint3(i,j,k)].r;
+				if (result != 0&&minDis> abs(result)) {
+					minDis =  abs(result);
+					inside = result < 0;
+				}
+			}
+		}
+	}
+	rstBuff[0] = minDis* (inside?-1:1);
+}

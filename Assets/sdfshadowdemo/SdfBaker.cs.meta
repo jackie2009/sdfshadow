@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 018c5819b65faa2439e3fced1b2fdf0c
+timeCreated: 1622461834
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - tempDepth: {instanceID: 0}
+  - testTex: {instanceID: 0}
+  - rt: {instanceID: 0}
+  - renderShader: {fileID: 4800000, guid: ce19e1d3760539447b892d7bc9719af5, type: 3}
+  - calMinDistance: {instanceID: 0}
+  - sdfTex: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
